@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import HoverCard from '../components/HoverCard'
+import HoverCard2 from '../components/HoverCard2'
+import HoverCard3 from '../components/HoverCard3'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -29,7 +32,7 @@ const Landing = () => {
 
     // Typing effect
     const line1 = 'IEEE CTSOc presents'
-    const line2 = 'LOGIC LEAGUE'
+    const line2 = 'CODE COMBAT'
     const charMs = 70
     const pauseMs = 250
     const start = performance.now() + 200 // initial delay
@@ -65,13 +68,13 @@ const Landing = () => {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className='min-h-screen flex flex-col'>
       <Navbar />
       {/* Spacer for fixed navbar */}
       <div className='h-16' />
 
       {/* Hero */}
-      <section className='container-narrow py-20 md:py-28 text-center'>
+      <section className='container-narrow py-4 md:py-6 text-center'>
         <motion.h1
           ref={heroRef}
           initial={{ opacity: 0, scale: 0.96 }}
@@ -81,13 +84,12 @@ const Landing = () => {
         >
           <span
             ref={line1Ref}
-            className='text-violet-400 drop-shadow-[0_0_12px_rgba(167,139,250,0.5)]'
+            className='bg-gradient-to-r from-sky-400 to-white text-transparent bg-clip-text drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]'
           ></span>
-
           <br />
           <span
             ref={line2Ref}
-            className='bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-orange-400 drop-shadow-[0_0_20px_rgba(251,113,133,0.5)]'
+            className='bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-green-500 drop-shadow-[0_0_20px_rgba(239,68,68,0.5)]'
           ></span>
           <span className='typing-caret'>|</span>
         </motion.h1>
@@ -99,105 +101,87 @@ const Landing = () => {
           viewport={{ once: true, amount: 0.4 }}
           className='mt-6 text-emerald-100/80 max-w-2xl mx-auto text-center leading-relaxed'
         >
-          A thrilling coding competition that pushes your skills to the limit
-          and fuels your creativity. Face real-world challenges, learn from
-          peers, and showcase your talent to the world.
+          Enter the arena of algorithms where logic meets battle. <br />This
+          <span className='text-green-400 font-bold text-xl'> CP Hackathon</span> challenges
+          you to code, conquer, and claim victory. Your code is your weapon. <span className='text-red-500 font-bold '> Are
+          you ready for combat?</span>
         </motion.p>
       </section>
 
-      {/* Event Details */}
-      <section id='about' className='container-narrow'>
-        <div className='flex flex-col space-y-6'>
-          {/* First Part: Event Details and Prizes */}
-          <div className='grid md:grid-cols-2 gap-8 md:gap-12 items-start'>
-            {/* Left column */}
-            <motion.ul
-              ref={leftListRef}
-              initial='hidden'
-              whileInView='show'
-              viewport={{ once: true, amount: 0.4 }}
-              variants={{
-                hidden: {},
-                show: {
-                  transition: { staggerChildren: 0.15 }
-                }
-              }}
-              className='space-y-3 text-lg'
-            >
-              {[
-                'Date: 12th September 2025',
-                'Venue: Tech Hall, Block A',
-                'Time: 10:00 AM'
-              ].map(text => (
-                <motion.li
-                  key={text}
-                  variants={{
-                    hidden: { opacity: 0, x: -24 },
-                    show: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-                  }}
-                  className='glass rounded-lg px-4 py-3'
-                >
-                  {text}
-                </motion.li>
-              ))}
-            </motion.ul>
+      {/* Hover Cards Section */}
+      <section id='cards' className='container-wide py-2'>
+        {/* <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className='text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent'
+        >
+          Interactive Card Gallery
+        </motion.h2> */}
+        
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-items-center'>
+          {/* Card 1 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className='w-full max-w-md'
+          >
+            <div className='transform scale-90 origin-center'>
+              <HoverCard />
+            </div>
+          </motion.div>
 
-            {/* Right column */}
-            <motion.div
-              ref={rightListRef}
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6 }}
-              className='glass rounded-xl p-5'
-            >
-              <h3 className='text-2xl font-bold text-emerald-300'>Prize Pool</h3>
-              <ul className='mt-4 space-y-2'>
-                <li className='flex items-start gap-2'>
-                  <span className='text-emerald-300 font-semibold'>
-                    1st Prize:
-                  </span>{' '}
-                  Keyboard + Mouse
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='text-emerald-300 font-semibold'>
-                    2nd Prize:
-                  </span>{' '}
-                  Mouse
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='text-emerald-300 font-semibold'>
-                    3rd Prize:
-                  </span>{' '}
-                  Screen Guard
-                </li>
-              </ul>
-            </motion.div>
-          </div>
+          {/* Card 2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className='w-full max-w-md'
+          >
+            <div className='transform scale-90 origin-center'>
+              <HoverCard2 />
+            </div>
+          </motion.div>
 
-          {/* Second Part: Register Now Button */}
-          <div className='flex justify-center mb-6'>
-            {(() => {
-              const MotionLink = motion(Link)
-              return (
-                <MotionLink
-                  to='/register'
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: '0 0 24px rgba(34,197,94,0.6)' // lime glow
-                  }}
-                  whileTap={{ scale: 0.97 }}
-                  className='inline-block text-center text-lg md:text-xl font-bold px-8 py-4 rounded-full
-                       bg-gradient-to-r from-teal-400 to-lime-400 text-white
-                       shadow-[0_0_16px_rgba(34,197,94,0.45)]
-                       transition-all duration-300
-                       hover:from-lime-400 hover:to-teal-400'
-                >
-                  Register Now
-                </MotionLink>
-              )
-            })()}
-          </div>
+          {/* Card 3 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className='w-full max-w-md lg:col-span-1 md:col-span-2 lg:col-start-auto md:col-start-1'
+          >
+            <div className='transform scale-90 origin-center'>
+              <HoverCard3 />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Register Now Section */}
+      <section className='container-narrow py-12'>
+        <div className='flex justify-center'>
+          <motion.a
+            href='https://script.google.com/macros/s/AKfycbzN-SvKeZBUgr66p9EvrAN-0U5B0nwx9W_YILZ4Ax6FvSnzw4sBx8qYsehgkzCWXv4Y/exec'
+            target='_blank'
+            rel='noopener noreferrer'
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 0 24px rgba(34,197,94,0.6)' // lime glow
+            }}
+            whileTap={{ scale: 0.97 }}
+            className='inline-block text-center text-lg md:text-xl font-bold px-8 py-4 rounded-full
+                 bg-gradient-to-r from-teal-400 to-lime-400 text-white
+                 shadow-[0_0_16px_rgba(34,197,94,0.45)]
+                 transition-all duration-300
+                 hover:from-lime-400 hover:to-teal-400'
+          >
+            Register Now
+          </motion.a>
         </div>
       </section>
 

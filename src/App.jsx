@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Lenis from '@studio-freight/lenis'
 import Landing from './pages/Landing'
-import Register from './pages/Register'
+
 import AboutPage from './pages/AboutPage'
 import SupportPage from './pages/SupportPage'
 import LoadingPage from './components/LoadingPage'
@@ -46,7 +46,6 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/support" element={<SupportPage />} />
-        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   )

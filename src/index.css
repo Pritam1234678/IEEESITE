@@ -22,18 +22,46 @@ body {
 
 /* Background gradient and base text color */
 body {
-	/* smooth black-to-green gradient */
+	/* smooth diagonal black-to-green gradient */
 	background: linear-gradient(180deg, #000000 0%, #020a04 30%, #032516 60%, #064e3b 100%);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	color: rgb(209 250 229); /* emerald-100 */
 	min-height: 100vh;
+	transition: background 0.8s ease-in-out;
+}
+
+/* Theme 1: Red-Black Gradient (for HoverCard 1) */
+body.theme-red {
+	background: linear-gradient(180deg, #000000 0%, #1a0202 30%, #4a1010 60%, #7f1d1d 100%);
+	color: rgb(254 202 202); /* red-100 */
+}
+
+/* Theme 2: Golden-Blue Gradient (for HoverCard 2) */
+body.theme-golden-blue {
+	background: linear-gradient(160deg, #1e1b4b 0%, #000000 30%, #9f2a95 60%, #f30675 100%);
+	color: rgb(254 249 195); /* yellow-100 */
+}
+
+/* Theme 3: Original Green (for HoverCard 3) */
+body.theme-green {
+	background: linear-gradient(180deg, #000000 0%, #020a04 30%, #032516 60%, #064e3b 100%);
+	color: rgb(209 250 229); /* emerald-100 */
 }
 
 /* Custom helper classes (plain CSS to avoid @apply) */
 .container-narrow {
 	max-width: 72rem; /* ~max-w-6xl */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+}
+
+.container-wide {
+	max-width: 90rem; /* ~max-w-7xl */
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 1rem;

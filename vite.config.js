@@ -9,5 +9,9 @@ export default defineConfig({
     historyApiFallback: {
       index: '/index.html'
     }
+  },
+  define: {
+    // This provides a global 'process' variable for compatibility with some libraries.
+    'process.env': {}
   }
 })

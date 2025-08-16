@@ -1,7 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 const Support = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        to_email: 'mandalpritam765@gmail.com'
+      }
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result)
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', phone: '', message: '' })
+    } catch (error) {
+      console.error('Email sending failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -88,6 +139,123 @@ const Support = () => {
             We're here to help! Whether you have technical issues, registration questions, 
             or just want to know more about the competition, reach out to us.
           </p>
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.div variants={fadeUp} className="glass rounded-xl p-8">
+          <h3 className="text-2xl font-bold text-emerald-300 mb-6 text-center">
+            Send us a Message
+          </h3>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Name Field */}
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-emerald-300 font-medium">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 bg-black/20 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-emerald-300/50 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              {/* Email Field */}
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-emerald-300 font-medium">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 bg-black/20 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-emerald-300/50 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+                  placeholder="Enter your email address"
+                />
+              </div>
+            </div>
+
+            {/* Phone Number Field */}
+            <div className="space-y-2">
+              <label htmlFor="phone" className="block text-emerald-300 font-medium">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-black/20 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-emerald-300/50 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+                placeholder="Enter your phone number (optional)"
+              />
+            </div>
+
+            {/* Message Field */}
+            <div className="space-y-2">
+              <label htmlFor="message" className="block text-emerald-300 font-medium">
+                Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                rows={5}
+                className="w-full px-4 py-3 bg-black/20 border border-emerald-500/30 rounded-lg text-emerald-100 placeholder-emerald-300/50 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all resize-vertical"
+                placeholder="Type your message here..."
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex flex-col items-center space-y-4">
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <div className="flex items-center space-x-2">
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </div>
+                ) : (
+                  'Send Message'
+                )}
+              </motion.button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-emerald-400 text-center"
+                >
+                  ✅ Message sent successfully! We'll get back to you soon.
+                </motion.div>
+              )}
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-400 text-center"
+                >
+                  ❌ Failed to send message. Please try again or contact us directly.
+                </motion.div>
+              )}
+            </div>
+          </form>
         </motion.div>
 
         {/* Support Options */}

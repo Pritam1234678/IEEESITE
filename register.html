@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>Register for Logic League</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --tw-bg-opacity: 1;
+      --tw-text-opacity: 1;
+      --tw-border-opacity: 1;
+      --tw-ring-opacity: 1;
+    }
+    body {
+      background-color: #064e3b;
+      background-image: linear-gradient(to bottom right, rgba(6, 78, 59, 0.9), rgba(16, 185, 129, 0.4));
+      color: #d1fae5;
+    }
+    .container-narrow {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .glass {
+      background-color: rgba(6, 78, 59, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    input, select {
+      background-color: rgba(6, 78, 59, 0.3);
+    }
+    input:focus, select:focus {
+      border-color: #34d399;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
+    }
+    /* Spinner for loading state */
+    .spinner {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      width: 1.25rem;
+      height: 1.25rem;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .btn-submit {
+      background: linear-gradient(to right, #2dd4bf, #a3e635);
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+      color: white;
+      font-weight: 700;
+    }
+    .btn-submit:hover:not(:disabled) {
+      background: linear-gradient(to right, #a3e635, #2dd4bf);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+    }
+    .btn-submit:disabled {
+      background-color: rgba(6, 78, 59, 0.5);
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <div class="h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8 border-b border-emerald-400/30">
+    <div class="flex items-center space-x-2">
+      <span class="text-2xl font-bold text-emerald-300">Logic League</span>
+    </div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="text-emerald-100/70 hover:text-emerald-50 transition-colors">Home</a>
+      <a href="#" class="text-emerald-100/70 hover:text-emerald-50 transition-colors">About</a>
+      <a href="#" class="text-emerald-100/70 hover:text-emerald-50 transition-colors">Contact</a>
+    </nav>
+  </div>
+
+  <main class="container-narrow py-16 flex-1">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 animate-fade-up">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-emerald-300 mb-4">
+          Register for Logic League
+        </h1>
+        <p class="text-emerald-100/70 text-lg">
+          Join the ultimate coding competition and showcase your programming skills!
+        </p>
+      </div>
+
+      <form id="registrationForm" class="glass rounded-2xl p-8 space-y-6 animate-fade-up">
+        <div>
+          <label for="name" class="block text-sm font-semibold text-emerald-300 mb-2">
+            Full Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-100 placeholder-emerald-100/50 transition-colors"
+            placeholder="Enter your full name"
+            required
+          />
+          <p id="nameError" class="mt-1 text-sm text-red-400 hidden"></p>
+        </div>
+
+        <div>
+          <label for="rollNumber" class="block text-sm font-semibold text-emerald-300 mb-2">
+            Roll Number *
+          </label>
+          <input
+            type="text"
+            id="rollNumber"
+            name="rollNumber"
+            class="w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-100 placeholder-emerald-100/50 transition-colors"
+            placeholder="Enter your roll number"
+            required
+          />
+          <p id="rollNumberError" class="mt-1 text-sm text-red-400 hidden"></p>
+        </div>
+
+        <div>
+          <label for="year" class="block text-sm font-semibold text-emerald-300 mb-2">
+            Academic Year *
+          </label>
+          <select
+            id="year"
+            name="year"
+            class="w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-100 transition-colors"
+            required
+          >
+            <option value="" disabled selected class="bg-emerald-950/30">Select Year</option>
+            <option value="1st" class="bg-emerald-950">1st Year</option>
+            <option value="2nd" class="bg-emerald-950">2nd Year</option>
+            <option value="3rd" class="bg-emerald-950">3rd Year</option>
+            <option value="4th" class="bg-emerald-950">4th Year</option>
+          </select>
+          <p id="yearError" class="mt-1 text-sm text-red-400 hidden"></p>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold text-emerald-300 mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-100 placeholder-emerald-100/50 transition-colors"
+            placeholder="Enter your email address"
+            required
+          />
+          <p id="emailError" class="mt-1 text-sm text-red-400 hidden"></p>
+        </div>
+
+        <div>
+          <label for="phoneNumber" class="block text-sm font-semibold text-emerald-300 mb-2">
+            Phone Number *
+          </label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            class="w-full px-4 py-3 rounded-lg border border-emerald-400/30 text-emerald-100 placeholder-emerald-100/50 transition-colors"
+            placeholder="Enter your phone number"
+            required
+          />
+          <p id="phoneNumberError" class="mt-1 text-sm text-red-400 hidden"></p>
+        </div>
+
+        <button
+          type="submit"
+          id="submitBtn"
+          class="w-full py-4 px-6 rounded-lg font-bold text-lg transition-all duration-300 btn-submit"
+        >
+          Register for Logic League
+        </button>
+
+        <div class="text-center text-emerald-100/60 text-sm">
+          <p>* Required fields</p>
+          <p class="mt-2">
+            By registering, you agree to participate in the Logic League competition 
+            on September 12th, 2025 at Tech Hall, Block A.
+          </p>
+        </div>
+      </form>
+      <div id="statusMessage" class="mt-6 p-4 rounded-lg text-center hidden" role="alert"></div>
+    </div>
+  </main>
+
+  <footer class="py-8 text-center text-emerald-100/50 text-sm">
+    <p>&copy; 2025 Logic League. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMessage = document.getElementById('statusMessage');
+    const inputs = form.querySelectorAll('input, select');
+
+    function showStatus(message, isSuccess) {
+      statusMessage.textContent = message;
+      statusMessage.classList.remove('hidden', 'bg-red-900/50', 'bg-green-900/50');
+      statusMessage.classList.add(isSuccess ? 'bg-green-900/50' : 'bg-red-900/50');
+      statusMessage.style.display = 'block';
+    }
+    
+    function validateForm() {
+      let isValid = true;
+      const formData = new FormData(form);
+      const errors = {};
+
+      inputs.forEach(input => {
+        const errorElement = document.getElementById(input.name + 'Error');
+        if (errorElement) {
+          errorElement.textContent = '';
+          errorElement.classList.add('hidden');
+        }
+      });
+
+      // Name
+      if (!formData.get('name').trim()) {
+        errors.name = 'Name is required';
+        isValid = false;
+      }
+
+      // Roll Number
+      if (!formData.get('rollNumber').trim()) {
+        errors.rollNumber = 'Roll number is required';
+        isValid = false;
+      }
+      
+      // Year
+      if (!formData.get('year')) {
+        errors.year = 'Year is required';
+        isValid = false;
+      }
+
+      // Email
+      const email = formData.get('email').trim();
+      if (!email) {
+        errors.email = 'Email is required';
+        isValid = false;
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        errors.email = 'Email is invalid';
+        isValid = false;
+      }
+
+      // Phone Number
+      const phoneNumber = formData.get('phoneNumber').trim().replace(/\D/g, '');
+      if (!phoneNumber) {
+        errors.phoneNumber = 'Phone number is required';
+        isValid = false;
+      } else if (!/^\d{10}$/.test(phoneNumber)) {
+        errors.phoneNumber = 'Phone number must be 10 digits';
+        isValid = false;
+      }
+
+      for (const key in errors) {
+        const errorElement = document.getElementById(key + 'Error');
+        if (errorElement) {
+          errorElement.textContent = errors[key];
+          errorElement.classList.remove('hidden');
+        }
+      }
+
+      return isValid;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<div class="flex items-center justify-center space-x-2"><div class="spinner"></div><span>Registering...</span></div>';
+      statusMessage.style.display = 'none';
+
+      const formData = {
+        name: form.name.value,
+        rollNumber: form.rollNumber.value,
+        year: form.year.value,
+        email: form.email.value,
+        phoneNumber: form.phoneNumber.value
+      };
+
+      // Call the Google Apps Script function
+      google.script.run
+        .withSuccessHandler(response => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Register for Logic League';
+          if (response.status === 'success') {
+            showStatus(response.message, true);
+            form.reset(); // Reset form on success
+          } else {
+            showStatus(response.message, false);
+          }
+        })
+        .withFailureHandler(error => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Register for Logic League';
+          showStatus("An unexpected error occurred. Please try again.", false);
+          console.error('Apps Script Error:', error);
+        })
+        .submitRegistration(formData);
+    });
+  </script>
+</body>
+</html>
