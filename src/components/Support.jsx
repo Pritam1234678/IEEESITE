@@ -67,19 +67,9 @@ const Support = () => {
 
   const supportOptions = [
     {
-      title: 'Technical Support',
-      description: 'Need help with platform access, submission issues, or technical difficulties during the competition?',
-      contact: 'tech.support@ieee-ctsoc.org',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      )
-    },
-    {
       title: 'Registration Help',
       description: 'Having trouble with registration, team formation, or need to update your information?',
-      contact: 'registration@ieee-ctsoc.org',
+      contact: '23052890@kiit.ac.in',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -89,7 +79,7 @@ const Support = () => {
     {
       title: 'General Inquiries',
       description: 'Questions about rules, prizes, event schedule, or anything else about Logic League?',
-      contact: 'info@ieee-ctsoc.org',
+      contact: 'adarshkumar@ieee.org',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -109,11 +99,11 @@ const Support = () => {
     },
     {
       question: 'What should I bring to the competition?',
-      answer: 'Bring your laptop, charger, and any preferred peripherals (mouse, keyboard). We\'ll provide WiFi, power outlets, and refreshments.'
+      answer: 'Bring your laptop, charger, and any preferred peripherals (mouse, keyboard). We\'ll provide WiFi and power outlets.'
     },
     {
       question: 'Is there a registration fee?',
-      answer: 'No, Logic League is completely free to participate! This is our way of giving back to the programming community.'
+      answer: 'No, Code Combat is completely free to participate! This is our way of giving back to the programming community.'
     },
     {
       question: 'What if I\'m a beginner?',
@@ -259,7 +249,7 @@ const Support = () => {
         </motion.div>
 
         {/* Support Options */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {supportOptions.map((option, index) => (
             <motion.div
               key={option.title}
@@ -286,7 +276,7 @@ const Support = () => {
         </div>
 
         {/* Contact Info */}
-        <motion.div variants={fadeUp} className="glass rounded-xl p-8">
+        {/* <motion.div variants={fadeUp} className="glass rounded-xl p-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-emerald-300">Get in Touch</h3>
@@ -333,7 +323,7 @@ const Support = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* FAQ Section */}
         <motion.div variants={fadeUp} className="space-y-6">
@@ -366,10 +356,10 @@ const Support = () => {
               For urgent issues during the competition day
             </p>
             <a
-              href="tel:+15551234567"
+              href="tel:+917992218342"
               className="text-red-400 hover:text-red-300 font-bold text-lg transition-colors"
             >
-              +1 (555) 123-4567
+              +91 7992218342
             </a>
           </div>
         </motion.div>

@@ -1,123 +1,210 @@
 /* Tailwind v4 */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Global styles */
 :root {
-	color-scheme: dark;
+  color-scheme: dark;
 }
 
 html,
 body,
 #root {
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Font is imported from JS via @fontsource; define the family here */
 body {
-	font-family: "Orbitron", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-		Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: 'Orbitron', ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
 /* Background gradient and base text color */
 body {
-	/* smooth diagonal black-to-green gradient */
-	background: linear-gradient(180deg, #000000 0%, #020a04 30%, #032516 60%, #064e3b 100%);
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	color: rgb(209 250 229); /* emerald-100 */
-	min-height: 100vh;
-	transition: background 0.8s ease-in-out;
+  /* smooth diagonal black-to-green gradient */
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #020a04 30%,
+    #032516 60%,
+    #064e3b 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: rgb(209 250 229); /* emerald-100 */
+  min-height: 100vh;
+  transition: background 0.8s ease-in-out;
 }
 
 /* Theme 1: Red-Black Gradient (for HoverCard 1) */
+
 body.theme-red {
-	background: linear-gradient(180deg, #000000 0%, #1a0202 30%, #4a1010 60%, #7f1d1d 100%);
-	color: rgb(254 202 202); /* red-100 */
+  background: linear-gradient(
+    160deg,
+    #000000 0%,
+    #021a02 30%,
+    #104a10 60%,
+    #1d7f1d 100%
+  );
+  color: rgb(202 254 202); /* green-100 equivalent */
 }
 
 /* Theme 2: Golden-Blue Gradient (for HoverCard 2) */
 body.theme-golden-blue {
-	background: linear-gradient(160deg, #1e1b4b 0%, #000000 30%, #9f2a95 60%, #f30675 100%);
-	color: rgb(254 249 195); /* yellow-100 */
+  background: linear-gradient(
+    160deg,
+    #4b1e1e 0%,
+    #000000 30%,
+    #7f1d3d 60%,
+    #d946ef 100%
+  );
+  color: rgb(254 215 215); /* red-pink-100 equivalent */
 }
 
 /* Theme 3: Original Green (for HoverCard 3) */
 body.theme-green {
-	background: linear-gradient(180deg, #000000 0%, #020a04 30%, #032516 60%, #064e3b 100%);
-	color: rgb(209 250 229); /* emerald-100 */
+  background: linear-gradient(
+    160deg,
+    #1e3a8a 0%,
+    #1e40af 30%,
+    #0891b2 60%,
+    #67e8f9 100%
+  );
+  color: rgb(255 255 255); /* white for contrast */
 }
 
 /* Custom helper classes (plain CSS to avoid @apply) */
 .container-narrow {
-	max-width: 72rem; /* ~max-w-6xl */
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	width: 100%;
+  max-width: 72rem; /* ~max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
 }
 
 .container-wide {
-	max-width: 90rem; /* ~max-w-7xl */
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	width: 100%;
+  max-width: 90rem; /* ~max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
 }
 
 @media (max-width: 640px) {
-	.container-narrow {
-		padding-left: 0.75rem;
-		padding-right: 0.75rem;
-	}
+  .container-narrow {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 .glass {
-	background: rgba(255, 255, 255, 0.05);
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Typing caret */
 @keyframes caret-blink {
-	0%, 49% { opacity: 1; }
-	50%, 100% { opacity: 0; }
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 .typing-caret {
-	display: inline-block;
-	margin-left: 4px;
-	color: #34d399; /* emerald-400 */
-	animation: caret-blink 1s step-end infinite;
+  display: inline-block;
+  margin-left: 4px;
+  color: #34d399; /* emerald-400 */
+  animation: caret-blink 1s step-end infinite;
 }
 
 /* Ensure all sections take proper space */
 section {
-	width: 100%;
-	position: relative;
+  width: 100%;
+  position: relative;
 }
 
 /* Fix for mobile viewport */
 @media (max-width: 768px) {
-	html {
-		-webkit-text-size-adjust: 100%;
-	}
-	
-	body {
-		background-attachment: scroll;
-	}
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
 }
 
 /* Remove any unwanted margins/padding */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Ensure main app container fills screen */
 #root {
-	min-height: 100vh;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar Styling */
+/* Webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10b981, #065f46);
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #34d399, #047857);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #6ee7b7, #059669);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 rgba(0, 0, 0, 0.3);
+}
+
+/* For better contrast in themed states */
+body.theme-red::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ef4444, #991b1b);
+}
+
+body.theme-red::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f87171, #b91c1c);
+}
+
+body.theme-golden-blue::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+}
+
+body.theme-golden-blue::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+}
+
+body.theme-green::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #0891b2);
+}
+
+body.theme-green::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee, #0e7490);
 }

@@ -219,21 +219,35 @@ const HoverCard3 = () => {
         />
 
         {/* Text overlay */}
-        <motion.div
-          className="absolute bottom-6 left-6 right-6 z-20"
-          animate={{ 
-            opacity: isHovered ? 1 : 0.8,
-            y: isHovered ? 0 : 10
-          }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <h3 className="text-white text-xl font-bold mb-2 drop-shadow-lg">
-            {isHovered ? "Card 3 - Image Revealed!" : "Hover Card 3"}
-          </h3>
-          <p className="text-white/90 text-sm drop-shadow-md">
-            Pink theme with p5 & p6 images ✨
-          </p>
-        </motion.div>
+       <motion.div
+                className='absolute bottom-4 left-4 right-4 z-30 bg-black/40 backdrop-blur-sm rounded-lg p-3'
+                animate={{
+                  opacity: isHovered ? 1 : 0.9,
+                  y: isHovered ? 0 : 6
+                }}
+                transition={{ duration: 0.45, delay: 0.15 }}
+              >
+                <h3 className='text-emerald-400 text-lg md:text-xl font-extrabold mb-1 text-left drop-shadow-lg'>
+                  {isHovered ? 'TagLine' : 'Hover to reveal'}
+                </h3>
+      
+                <div className='text-sm leading-relaxed text-left break-words'>
+                  {isHovered ? (
+                    <div className='space-y-2'>
+                      <div className='text-white/95 font-semibold'>
+                        Unleash the Dragon Within
+                      </div>
+                      <div className='text-pink-300 text-md italic'>
+                        Sharpen your logic. Strike with speed. Claim the crown.
+                      </div>
+                    </div>
+                  ) : (
+                    <div className='text-white/90'>
+                      Hover this card to make yourself motivated.
+                    </div>
+                  )}
+                </div>
+              </motion.div>
 
       </motion.div>
       

@@ -75,6 +75,37 @@ const About = () => {
           </p>
         </motion.div>
 
+        {/* Venue & Time */}
+        <motion.div variants={fadeUp} className="glass rounded-xl p-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <div className="flex items-start space-x-4">
+            <div className="bg-emerald-800/20 p-3 rounded-full">
+              <svg className="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-sm text-emerald-100/70">Venue</div>
+              <div className="text-lg font-bold text-emerald-300">Campus 25 Block A</div>
+              <div className="text-sm text-emerald-100/70">Kiit University</div>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <div className="bg-emerald-800/20 p-3 rounded-full">
+              <svg className="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-sm text-emerald-100/70">Date & Time</div>
+              <div className="text-lg font-bold text-emerald-300">Sep 21, 2025 · 11:00 AM - 2:00 PM</div>
+              <div className="text-sm text-emerald-100/70">Check-in opens at 10:00 AM</div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
