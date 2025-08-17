@@ -31,7 +31,7 @@ const Landing = () => {
     }
 
     // Typing effect
-    const line1 = 'IEEE CTSOc presents'
+    const line1 = 'IEEE CtSoc presents'
     const line2 = 'CODE COMBAT'
     const charMs = 70
     const pauseMs = 250
