@@ -69,7 +69,7 @@ const Support = () => {
     {
       title: 'Registration Help',
       description: 'Having trouble with registration, team formation, or need to update your information?',
-      contact: '23052890@kiit.ac.in',
+      contact: 'kshitij12@ieee.org',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -79,7 +79,7 @@ const Support = () => {
     {
       title: 'General Inquiries',
       description: 'Questions about rules, prizes, event schedule, or anything else about Logic League?',
-      contact: 'adarshkumar@ieee.org',
+      contact: 'sanidhya_2710@ieee.org',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -94,8 +94,8 @@ const Support = () => {
       answer: 'We support all major programming languages including C++, Java, Python, JavaScript, C#, and more. Choose the language you\'re most comfortable with.'
     },
     {
-      question: 'Can I participate as an individual?',
-      answer: 'While teams of 2-3 members are encouraged for collaboration and learning, individual participation is also welcome.'
+      question: 'Is it a Solo or a Team event?',
+      answer: 'It is a Solo event.'
     },
     {
       question: 'What should I bring to the competition?',
@@ -349,7 +349,7 @@ const Support = () => {
         </motion.div>
 
         {/* Emergency Contact */}
-        <motion.div variants={fadeUp} className="text-center">
+        {/* <motion.div variants={fadeUp} className="text-center">
           <div className="glass rounded-xl p-6 bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20">
             <h3 className="text-xl font-bold text-red-400 mb-2">Emergency Contact</h3>
             <p className="text-emerald-100/70 mb-3">
@@ -362,7 +362,7 @@ const Support = () => {
               +91 7992218342
             </a>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   )

@@ -86,7 +86,7 @@ const About = () => {
             </div>
             <div>
               <div className="text-sm text-emerald-100/70">Venue</div>
-              <div className="text-lg font-bold text-emerald-300">Campus 25 Block A</div>
+              <div className="text-lg font-bold text-emerald-300">Campus 25 </div>
               <div className="text-sm text-emerald-100/70">Kiit University</div>
             </div>
           </div>
@@ -100,7 +100,7 @@ const About = () => {
             </div>
             <div>
               <div className="text-sm text-emerald-100/70">Date & Time</div>
-              <div className="text-lg font-bold text-emerald-300">Sep 21, 2025 · 11:00 AM - 2:00 PM</div>
+              <div className="text-lg font-bold text-emerald-300">Sep 21, 2025 · 11:00 AM </div>
               <div className="text-sm text-emerald-100/70">Check-in opens at 10:00 AM</div>
             </div>
           </div>
@@ -136,11 +136,11 @@ const About = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="space-y-2">
-              <div className="text-2xl font-bold text-violet-400">3-4</div>
+              <div className="text-2xl font-bold text-violet-400">2</div>
               <div className="text-emerald-100/70">Hours of Intense Battle</div>
             </div>
             <div className="space-y-2">
-              <div className="text-2xl font-bold text-pink-400">5-8</div>
+              <div className="text-2xl font-bold text-pink-400">6-8</div>
               <div className="text-emerald-100/70">Epic Coding Quests</div>
             </div>
             <div className="space-y-2">
@@ -161,16 +161,13 @@ const About = () => {
           <ul className="space-y-3 text-emerald-100/70">
             <li className="flex items-start space-x-3">
               <span className="text-emerald-400 mt-1">🐲</span>
-              <span>Form your dragon squad: Teams of 2-3 warriors are welcome</span>
+              <span> Solo warriors are welcome</span>
             </li>
             <li className="flex items-start space-x-3">
               <span className="text-emerald-400 mt-1">⚔️</span>
               <span>Choose your weapon: Any programming language (C++, Java, Python, etc.)</span>
             </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">📜</span>
-              <span>Consult ancient scrolls: Internet access for documentation only</span>
-            </li>
+          
             <li className="flex items-start space-x-3">
               <span className="text-emerald-400 mt-1">⚡</span>
               <span>Bring your battle gear: Laptop, charger, and warrior spirit</span>

@@ -129,7 +129,7 @@ const HoverCard = () => {
           style={{ zIndex: 10 }}
         >
           <img
-            src='/p2.jpg'
+            src='/p1.jpg'   //changed
             alt='Overlay Image'
             className='w-full h-full object-cover'
           />

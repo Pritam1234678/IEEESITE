@@ -7,7 +7,7 @@ const LoadingPage = ({ onLoadingComplete }) => {
   const [typedText, setTypedText] = useState('')
   const textRef = useRef(null)
 
-  const fullText = "Welcome to IEEE CtSoc CODE COMBAT"
+  const fullText = "Welcome to IEEE CTSoc CODE COMBAT"
   const charMs = 100 // milliseconds per character (slower for smoother typing)
 
   useEffect(() => {

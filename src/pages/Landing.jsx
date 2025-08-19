@@ -31,7 +31,7 @@ const Landing = () => {
     }
 
     // Typing effect
-    const line1 = 'IEEE CtSoc presents'
+    const line1 = 'IEEE CTSoc presents'
     const line2 = 'CODE COMBAT'
     const charMs = 70
     const pauseMs = 250
@@ -166,7 +166,7 @@ const Landing = () => {
       <section className='container-narrow py-12'>
         <div className='flex justify-center'>
           <motion.a
-            href='https://script.google.com/macros/s/AKfycbzN-SvKeZBUgr66p9EvrAN-0U5B0nwx9W_YILZ4Ax6FvSnzw4sBx8qYsehgkzCWXv4Y/exec'
+            href='https://script.google.com/macros/s/AKfycbyFcJRLA_8Sim6-JRhtrYhIE-8kvE2eO4NANe7ieyaP9RVGtRQn8GgBVK4-EjVCwRpE/exec'
             target='_blank'
             rel='noopener noreferrer'
             whileHover={{

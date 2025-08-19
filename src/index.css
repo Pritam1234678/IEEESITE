@@ -44,12 +44,13 @@ body.theme-red {
   background: linear-gradient(
     160deg,
     #000000 0%,
-    #021a02 30%,
-    #104a10 60%,
-    #1d7f1d 100%
+    #033703 30%,
+    #1a6b1a 60%,
+    #29a329 100%
   );
-  color: rgb(202 254 202); /* green-100 equivalent */
+  color: rgb(230, 255, 230); /* lighter green text */
 }
+
 
 /* Theme 2: Golden-Blue Gradient (for HoverCard 2) */
 body.theme-golden-blue {
@@ -67,13 +68,15 @@ body.theme-golden-blue {
 body.theme-green {
   background: linear-gradient(
     160deg,
-    #1e3a8a 0%,
-    #1e40af 30%,
-    #0891b2 60%,
-    #67e8f9 100%
+    #3b0a0a 0%,   /* very dark red */
+    #8b0000 30%,  /* strong red */
+    #00008b 60%,  /* dark blue */
+    #1e3a8a 100%  /* navy blue */
   );
-  color: rgb(255 255 255); /* white for contrast */
+  color: rgb(255 255 255); /* keep white for contrast */
 }
+
+
 
 /* Custom helper classes (plain CSS to avoid @apply) */
 .container-narrow {
