@@ -16,6 +16,12 @@ const HoverCard = () => {
   const handleMouseLeave = () => {
     setIsHovered(false)
     document.body.className = ''
+    if (timelineRef.current && secondImageRef.current) {
+      setTimeout(() => {
+        timelineRef.current.pause(0)
+        gsap.set(secondImageRef.current, { scale: 0, opacity: 0, rotation: 45 })
+      }, 1500)
+    }
   }
 
   useEffect(() => {
@@ -129,7 +135,7 @@ const HoverCard = () => {
           style={{ zIndex: 10 }}
         >
           <img
-            src='/p1.jpg'   //changed
+            src='/p2.jpg'   //changed
             alt='Overlay Image'
             className='w-full h-full object-cover'
           />
@@ -252,8 +258,8 @@ const HoverCard = () => {
               <div className='space-y-1'>
                 <div className='text-emerald-200 font-semibold'>
                   <span className='text-emerald-400'>📍</span>
-                  <span className='ml-2 text-white'>Campus 25,</span>
-                  <span className='ml-1 text-emerald-300'>A Block</span>
+                  <span className='ml-2 text-white'>Campus 25</span>
+                  
                 </div>
 
                 <div className='text-yellow-300 font-medium'>
@@ -263,12 +269,12 @@ const HoverCard = () => {
 
                 <div className='text-pink-300 font-medium'>
                   <span className='font-semibold'>Time:</span>
-                  <span className='ml-2 text-white'>11:00 AM - 2:00 PM</span>
+                  <span className='ml-2 text-white'>11:00 AM </span>
                 </div>
               </div>
             ) : (
               <div className='text-white/90'>
-                Hover this card to reveal the venue and time.
+                 Venue and Time.
               </div>
             )}
           </div>

@@ -16,6 +16,12 @@ const HoverCard3 = () => {
   const handleMouseLeave = () => {
     setIsHovered(false)
     document.body.className = ''
+    if (timelineRef.current && secondImageRef.current) {
+      setTimeout(() => {
+        timelineRef.current.pause(0)
+        gsap.set(secondImageRef.current, { scale: 0, opacity: 0, rotation: 45 })
+      }, 1500)
+    }
   }
 
   useEffect(() => {
@@ -121,7 +127,7 @@ const HoverCard3 = () => {
           style={{ zIndex: 10 }}
         >
           <img
-            src="/p5.jpg"
+            src="/p6.jpg"
             alt="Overlay Image"
             className="w-full h-full object-cover"
           />
@@ -234,16 +240,14 @@ const HoverCard3 = () => {
                 <div className='text-sm leading-relaxed text-left break-words'>
                   {isHovered ? (
                     <div className='space-y-2'>
-                      <div className='text-white/95 font-semibold'>
-                        Unleash the Dragon Within
-                      </div>
+                     
                       <div className='text-pink-300 text-md italic'>
-                        Sharpen your logic. Strike with speed. Claim the crown.
+                        Fight to the last line of code!
                       </div>
                     </div>
                   ) : (
                     <div className='text-white/90'>
-                      Hover this card to make yourself motivated.
+                      Tagline
                     </div>
                   )}
                 </div>

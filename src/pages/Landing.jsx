@@ -165,7 +165,7 @@ const Landing = () => {
       {/* Register Now Section */}
       <section className='container-narrow py-12'>
         <div className='flex justify-center'>
-          <motion.a
+          {/* <motion.a
             href='https://script.google.com/macros/s/AKfycbyFcJRLA_8Sim6-JRhtrYhIE-8kvE2eO4NANe7ieyaP9RVGtRQn8GgBVK4-EjVCwRpE/exec'
             target='_blank'
             rel='noopener noreferrer'
@@ -181,7 +181,24 @@ const Landing = () => {
                  hover:from-lime-400 hover:to-teal-400'
           >
             Register Now
-          </motion.a>
+          </motion.a> */}
+               <motion.p
+          
+            target='_blank'
+            rel='noopener noreferrer'
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 0 24px rgba(34,197,94,0.6)' // lime glow
+            }}
+            whileTap={{ scale: 0.97 }}
+            className='inline-block text-center text-lg md:text-xl font-bold px-8 py-4 rounded-full
+                 bg-gradient-to-r from-teal-400 to-lime-400 text-white
+                 shadow-[0_0_16px_rgba(34,197,94,0.45)]
+                 transition-all duration-300
+                 hover:from-lime-400 hover:to-teal-400'
+          >
+            Registration opening soon!
+          </motion.p>
         </div>
       </section>
 

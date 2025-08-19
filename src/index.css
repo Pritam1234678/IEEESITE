@@ -68,13 +68,14 @@ body.theme-golden-blue {
 body.theme-green {
   background: linear-gradient(
     160deg,
-    #3b0a0a 0%,   /* very dark red */
-    #8b0000 30%,  /* strong red */
-    #00008b 60%,  /* dark blue */
-    #1e3a8a 100%  /* navy blue */
+    #000000 0%,   /* black */
+    #0a0a2a 30%,  /* very dark navy */
+    #1e3a8a 60%,  /* deep blue */
+    #3b82f6 100%  /* bright blue */
   );
   color: rgb(255 255 255); /* keep white for contrast */
 }
+
 
 
 

@@ -16,6 +16,12 @@ const HoverCard2 = () => {
   const handleMouseLeave = () => {
     setIsHovered(false)
     document.body.className = ''
+    if (timelineRef.current && secondImageRef.current) {
+      setTimeout(() => {
+        timelineRef.current.pause(0)
+        gsap.set(secondImageRef.current, { scale: 0, opacity: 0, rotation: 45 })
+      }, 1500)
+    }
   }
 
   useEffect(() => {
@@ -129,7 +135,7 @@ const HoverCard2 = () => {
           style={{ zIndex: 10 }}
         >
           <img
-            src='/p3.jpg'
+            src='/p4.jpg'
             alt='Overlay Image'
             className='w-full h-full object-cover'
           />
@@ -250,12 +256,12 @@ const HoverCard2 = () => {
           <div className='text-sm leading-relaxed text-left break-words'>
             {isHovered ? (
               <div className='text-white/90'>
-                Total Prize Pool of <span className='font-bold text-xl text-red-600'>6000 INR</span> will be given to the top 3
-                participants.
+                Total Prize Pool of <span className='font-bold text-xl text-red-600'>10<span className='text-2xl'>K</span> INR</span> will be given to the top 3
+                winners.
               </div>
             ) : (
               <div className='text-white/90'>
-                Hover this card to reveal the Prize Pool.
+                Prize Pool.
               </div>
             )}
           </div>
