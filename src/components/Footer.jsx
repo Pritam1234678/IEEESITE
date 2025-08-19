@@ -102,9 +102,9 @@ const Footer = () => {
             <h4 className='font-bold text-emerald-300'>Contact</h4>
             <div className='space-y-2 text-sm text-emerald-100/70'>
               <p><span className='font-bold text-green-300'>Name:</span> Akshat Agarwal</p>
-              <p><span className='font-bold text-green-300'>Email:</span> akshat_agrawal@ieee.org</p>
+              <p><span className='font-bold text-green-300'>Email:</span> <a href="mailto:akshat_agrawal@ieee.org">akshat_agrawal@ieee.org</a></p>
               <p><span className='font-bold text-green-300'>Name:</span> Sanidhya Kamthan</p>
-              <p><span className='font-bold text-green-300'>Email:</span> sanidhya_2710@ieee.org</p>
+              <p><span className='font-bold text-green-300'>Email:</span> <a href="mailto:sanidhya_2710@ieee.org">sanidhya_2710@ieee.org</a></p>
             </div>
           </motion.div>
         </div>
