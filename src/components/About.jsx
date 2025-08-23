@@ -63,66 +63,66 @@ const About = () => {
         className="space-y-12"
       >
         {/* Header */}
-        <motion.div variants={fadeUp} className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-emerald-300">
+        <motion.div variants={fadeUp} className="text-center space-y-4 px-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-300">
             About Code Combat 🐲
           </h2>
-          <p className="text-emerald-100/70 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-emerald-100/70 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             Welcome to Code Combat, a thrilling competitive programming hackathon designed to test your logic, speed, and problem-solving skills. Set in a dark green and black battleground, the event draws inspiration from the might of dragons—symbols of power, wisdom, and fierce challenge.
           </p>
-          <p className="text-emerald-100/60 max-w-2xl mx-auto">
+          <p className="text-emerald-100/60 max-w-2xl mx-auto text-sm md:text-base">
             Participants will face intense coding battles, solving algorithmic puzzles under time pressure. Just like warriors in combat, coders must strategize, adapt, and unleash their full potential to claim the top spot.
           </p>
         </motion.div>
 
         {/* Venue & Time */}
-        <motion.div variants={fadeUp} className="glass rounded-xl p-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <div className="flex items-start space-x-4">
-            <div className="bg-emerald-800/20 p-3 rounded-full">
-              <svg className="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <motion.div variants={fadeUp} className="glass rounded-xl p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between space-y-6 md:space-y-0">
+          <div className="flex items-start space-x-3 w-full md:w-auto">
+            <div className="bg-emerald-800/20 p-2 md:p-3 rounded-full flex-shrink-0">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
               </svg>
             </div>
-            <div>
-              <div className="text-sm text-emerald-100/70">Venue</div>
-              <div className="text-lg font-bold text-emerald-300">Campus 25 </div>
-              <div className="text-sm text-emerald-100/70">Kiit University</div>
+            <div className="min-w-0 flex-1">
+              <div className="text-xs md:text-sm text-emerald-100/70">Venue</div>
+              <div className="text-base md:text-lg font-bold text-emerald-300">Campus 25</div>
+              <div className="text-xs md:text-sm text-emerald-100/70">Kiit University</div>
             </div>
           </div>
 
-          <div className="flex items-start space-x-4">
-            <div className="bg-emerald-800/20 p-3 rounded-full">
-              <svg className="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-start space-x-3 w-full md:w-auto">
+            <div className="bg-emerald-800/20 p-2 md:p-3 rounded-full flex-shrink-0">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
               </svg>
             </div>
-            <div>
-              <div className="text-sm text-emerald-100/70">Date & Time</div>
-              <div className="text-lg font-bold text-emerald-300">Sep 21, 2025 · 11:00 AM </div>
-              <div className="text-sm text-emerald-100/70">Check-in opens at 10:00 AM</div>
+            <div className="min-w-0 flex-1">
+              <div className="text-xs md:text-sm text-emerald-100/70">Date & Time</div>
+              <div className="text-base md:text-lg font-bold text-emerald-300">Sep 21, 2025 · 11:00 AM</div>
+              <div className="text-xs md:text-sm text-emerald-100/70">Check-in opens at 10:00 AM</div>
             </div>
           </div>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               variants={fadeUp}
-              className="glass rounded-xl p-6 space-y-4"
+              className="glass rounded-xl p-4 md:p-6 space-y-3 md:space-y-4"
             >
-              <div className="flex items-center space-x-4">
-                <div className="text-emerald-400">
+              <div className="flex items-start md:items-center space-x-3 md:space-x-4">
+                <div className="text-emerald-400 flex-shrink-0 mt-1 md:mt-0">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-emerald-300">
+                <h3 className="text-lg md:text-xl font-bold text-emerald-300 leading-tight">
                   {feature.title}
                 </h3>
               </div>
-              <p className="text-emerald-100/70 leading-relaxed">
+              <p className="text-sm md:text-base text-emerald-100/70 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -130,55 +130,55 @@ const About = () => {
         </div>
 
         {/* Competition Details */}
-        <motion.div variants={fadeUp} className="glass rounded-xl p-8 space-y-6">
-          <h3 className="text-2xl font-bold text-emerald-300 text-center">
+        <motion.div variants={fadeUp} className="glass rounded-xl p-6 md:p-8 space-y-6">
+          <h3 className="text-xl md:text-2xl font-bold text-emerald-300 text-center">
             The Dragon's Challenge Awaits ⚔️
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-center">
             <div className="space-y-2">
-              <div className="text-2xl font-bold text-violet-400">2</div>
-              <div className="text-emerald-100/70">Hours of Intense Battle</div>
+              <div className="text-xl md:text-2xl font-bold text-violet-400">2</div>
+              <div className="text-sm md:text-base text-emerald-100/70">Hours of Intense Battle</div>
             </div>
             <div className="space-y-2">
-              <div className="text-2xl font-bold text-pink-400">6-8</div>
-              <div className="text-emerald-100/70">Epic Coding Quests</div>
+              <div className="text-xl md:text-2xl font-bold text-pink-400">6-8</div>
+              <div className="text-sm md:text-base text-emerald-100/70">Epic Coding Quests</div>
             </div>
             <div className="space-y-2">
-              <div className="text-2xl font-bold text-orange-400">Multiple</div>
-              <div className="text-emerald-100/70">Dragon Difficulty Tiers</div>
+              <div className="text-xl md:text-2xl font-bold text-orange-400">Multiple</div>
+              <div className="text-sm md:text-base text-emerald-100/70">Dragon Difficulty Tiers</div>
             </div>
           </div>
           <div className="text-center mt-6">
-            <p className="text-emerald-100/60 italic">
+            <p className="text-sm md:text-base text-emerald-100/60 italic px-2">
               "Prepare your weapons—because in Code Combat, only the sharpest minds survive." 🐲
             </p>
           </div>
         </motion.div>
 
         {/* Rules */}
-        <motion.div variants={fadeUp} className="glass rounded-xl p-8 space-y-4">
-          <h3 className="text-2xl font-bold text-emerald-300">Warriors' Code of Combat 🛡️</h3>
+        <motion.div variants={fadeUp} className="glass rounded-xl p-6 md:p-8 space-y-4">
+          <h3 className="text-xl md:text-2xl font-bold text-emerald-300">Warriors' Code of Combat 🛡️</h3>
           <ul className="space-y-3 text-emerald-100/70">
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">🐲</span>
-              <span> Solo warriors are welcome</span>
+            <li className="flex items-start space-x-2 md:space-x-3">
+              <span className="text-emerald-400 mt-1 flex-shrink-0">🐲</span>
+              <span className="text-sm md:text-base"> Solo warriors are welcome</span>
             </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">⚔️</span>
-              <span>Choose your weapon: Any programming language (C++, Java, Python, etc.)</span>
+            <li className="flex items-start space-x-2 md:space-x-3">
+              <span className="text-emerald-400 mt-1 flex-shrink-0">⚔️</span>
+              <span className="text-sm md:text-base">Choose your weapon: Any programming language (C++, Java, Python, etc.)</span>
             </li>
           
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">⚡</span>
-              <span>Bring your battle gear: Laptop, charger, and warrior spirit</span>
+            <li className="flex items-start space-x-2 md:space-x-3">
+              <span className="text-emerald-400 mt-1 flex-shrink-0">⚡</span>
+              <span className="text-sm md:text-base">Bring your battle gear: Laptop, charger, and warrior spirit</span>
             </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">🏆</span>
-              <span>Conquer the tiers: Problems ranked by dragon difficulty and glory points</span>
+            <li className="flex items-start space-x-2 md:space-x-3">
+              <span className="text-emerald-400 mt-1 flex-shrink-0">🏆</span>
+              <span className="text-sm md:text-base">Conquer the tiers: Problems ranked by dragon difficulty and glory points</span>
             </li>
-            <li className="flex items-start space-x-3">
-              <span className="text-emerald-400 mt-1">🔥</span>
-              <span>Battle until victory: Strategic thinking and adaptation are your allies</span>
+            <li className="flex items-start space-x-2 md:space-x-3">
+              <span className="text-emerald-400 mt-1 flex-shrink-0">🔥</span>
+              <span className="text-sm md:text-base">Battle until victory: Strategic thinking and adaptation are your allies</span>
             </li>
           </ul>
         </motion.div>
