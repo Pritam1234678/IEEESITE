@@ -116,6 +116,7 @@ const HoverCard = () => {
             src='/p1.jpg'
             alt='Background Image'
             className='w-full h-full object-cover'
+            loading='eager'
           />
         </motion.div>
 
@@ -138,6 +139,7 @@ const HoverCard = () => {
             src='/p2.jpg'   //changed
             alt='Overlay Image'
             className='w-full h-full object-cover'
+            loading='eager'
           />
 
           {/* Glowing border for second image */}
