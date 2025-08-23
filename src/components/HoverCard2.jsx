@@ -227,7 +227,7 @@ const HoverCard2 = () => {
           transition={{ duration: 0.45, delay: 0.15 }}
         >
           <h3 className='text-emerald-400 text-lg md:text-xl font-extrabold mb-1 text-left drop-shadow-lg'>
-            {isHovered ? 'Prize Pool' : 'Hover to reveal'}
+            {isHovered ? 'Prize Pool' : 'Tap to reveal'}
           </h3>
 
           <div className='text-sm leading-relaxed text-left break-words'>
