@@ -17,10 +17,13 @@ const HoverCard = () => {
     setIsHovered(false)
     document.body.className = ''
     if (timelineRef.current && secondImageRef.current) {
-      setTimeout(() => {
-        timelineRef.current.pause(0)
-        gsap.set(secondImageRef.current, { scale: 0, opacity: 0, rotation: 45 })
-      }, 1500)
+      gsap.to(secondImageRef.current, {
+        scale: 0,
+        opacity: 0,
+        rotation: 45,
+        duration: 0.6,
+        ease: "power2.inOut"
+      })
     }
   }
 
@@ -75,9 +78,9 @@ const HoverCard = () => {
   useEffect(() => {
     if (timelineRef.current) {
       if (isHovered) {
-        timelineRef.current.play()
+        timelineRef.current.restart()
       } else {
-        timelineRef.current.reverse()
+        timelineRef.current.pause(0)
       }
     }
   }, [isHovered])
@@ -165,36 +168,7 @@ const HoverCard = () => {
           />
         </div>
 
-        {/* Particle effects around the container */}
-        {isHovered && (
-          <div className='absolute inset-0 pointer-events-none'>
-            {[...Array(15)].map((_, i) => (
-              <motion.div
-                key={i}
-                className='absolute w-2 h-2 bg-orange-400 rounded-full'
-                initial={{
-                  opacity: 0,
-                  scale: 0,
-                  x: 160, // Start from center
-                  y: 192
-                }}
-                animate={{
-                  opacity: [0, 1, 0],
-                  scale: [0, 1.5, 0],
-                  x: 160 + Math.cos((i * 24 * Math.PI) / 180) * 150,
-                  y: 192 + Math.sin((i * 24 * Math.PI) / 180) * 150,
-                  rotate: 360
-                }}
-                transition={{
-                  duration: 3,
-                  delay: i * 0.1,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              />
-            ))}
-          </div>
-        )}
+  
 
         {/* Ripple effect from center */}
         {isHovered && (

@@ -17,10 +17,13 @@ const HoverCard3 = () => {
     setIsHovered(false)
     document.body.className = ''
     if (timelineRef.current && secondImageRef.current) {
-      setTimeout(() => {
-        timelineRef.current.pause(0)
-        gsap.set(secondImageRef.current, { scale: 0, opacity: 0, rotation: 45 })
-      }, 1500)
+      gsap.to(secondImageRef.current, {
+        scale: 0,
+        opacity: 0,
+        rotation: 45,
+        duration: 0.6,
+        ease: "power2.inOut"
+      })
     }
   }
 
@@ -67,9 +70,9 @@ const HoverCard3 = () => {
   useEffect(() => {
     if (timelineRef.current) {
       if (isHovered) {
-        timelineRef.current.play()
+        timelineRef.current.restart()
       } else {
-        timelineRef.current.reverse()
+        timelineRef.current.pause(0)
       }
     }
   }, [isHovered])
